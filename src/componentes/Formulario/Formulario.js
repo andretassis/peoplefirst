@@ -1,9 +1,25 @@
+import { useState } from "react"
 import Botao from "../Botao/Botao"
 import CampoTexto from "../CampoTexto/CampoTexto"
 import ListaSuspensa from "../ListaSuspensa/ListaSuspensa"
 import "./Formulario.css"
 
-const Formulario = () => {
+const Formulario = (props) => {
+
+    const [nome, setNome] = useState('')
+    const [cargo, setCargo] = useState('')
+    const [instagram, setInstagram] = useState('')
+    const [departamento, setDepartamento] = useState('')
+
+    const enviar = (evento) => {
+        evento.preventDefault()
+        props.novoColaborador({
+            nome: nome,
+            cargo: cargo,
+            instagram: instagram,
+            departamento: departamento
+        })
+    }
 
     const departamentos = [
         "Recrutamento e Seleção",
@@ -15,12 +31,35 @@ const Formulario = () => {
 
     return (
         <section className="formulario">
-            <form>
+            <form onSubmit={enviar}>
                 <h2>Preencha os dados para criação do card</h2>
-                <CampoTexto label="Nome" placeholder="Digite seu nome" />
-                <CampoTexto label="Cargo" placeholder="Digite seu cargo" />
-                <CampoTexto label="Instagram" placeholder="Informe a URL do Instagram" />
-                <ListaSuspensa label="Departamento" itens={departamentos} />
+                <CampoTexto
+                    obrigatorio={true}
+                    label="Nome"
+                    placeholder="Digite seu nome"
+                    valor={nome}
+                    inputAlterado={valor => setNome(valor)}
+                />
+                <CampoTexto
+                    obrigatorio={true}
+                    label="Cargo"
+                    placeholder="Digite seu cargo"
+                    valor={cargo}
+                    inputAlterado={valor => setCargo(valor)}
+                />
+                <CampoTexto
+                    label="Instagram"
+                    placeholder="Informe a URL do Instagram"
+                    valor={instagram}
+                    inputAlterado={valor => setInstagram(valor)}
+                />
+                <ListaSuspensa
+                    obrigatorio={true}
+                    label="Departamento"
+                    itens={departamentos}
+                    valor={departamento}
+                    inputAlterado={valor => setDepartamento(valor)}
+                />
                 <Botao>
                     Criar Card
                 </Botao>
