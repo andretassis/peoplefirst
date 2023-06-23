@@ -8,7 +8,7 @@ const Formulario = (props) => {
 
     const [nome, setNome] = useState('')
     const [cargo, setCargo] = useState('')
-    const [instagram, setInstagram] = useState('')
+    const [imagem, setImagem] = useState('')
     const [departamento, setDepartamento] = useState('')
 
     const enviar = (evento) => {
@@ -16,7 +16,7 @@ const Formulario = (props) => {
         props.novoColaborador({
             nome: nome,
             cargo: cargo,
-            instagram: instagram,
+            imagem: imagem,
             departamento: departamento
         })
     }
@@ -40,10 +40,10 @@ const Formulario = (props) => {
                     inputAlterado={valor => setCargo(valor)}
                 />
                 <CampoTexto
-                    label="Instagram"
-                    placeholder="Informe a URL do Instagram"
-                    valor={instagram}
-                    inputAlterado={valor => setInstagram(valor)}
+                    label="Imagem"
+                    placeholder="Informe a URL da Imagem"
+                    valor={imagem}
+                    inputAlterado={valor => setImagem(valor)}
                 />
                 <ListaSuspensa
                     obrigatorio={true}

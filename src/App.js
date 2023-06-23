@@ -49,10 +49,12 @@ function App() {
       <Banner />
       <Formulario departamentos={departamentos.map(departamento => departamento.nome)} novoColaborador={colaborador => novoCadastro(colaborador)} />
 
-      {departamentos.map(departamento => <Departamentos key={departamento.nome}
+      {departamentos.map(departamento => <Departamentos
+        key={departamento.nome}
         nome={departamento.nome}
         corPrimaria={departamento.corPrimaria}
         corSecundaria={departamento.corSecundaria}
+        colaboradores={colaboradores.filter(colaborador => colaborador.departamento === departamento.nome)}
       />)}
     </div>
   );
