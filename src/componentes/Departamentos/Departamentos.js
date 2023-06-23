@@ -3,7 +3,7 @@ import './Departamentos.css'
 
 const Departamentos = (props) => {
     return (
-        <section className="departamentos" style={{ backgroundColor: props.corSecundaria }}>
+        (props.colaboradores.length > 0) && <section className="departamentos" style={{ backgroundColor: props.corSecundaria }}>
             <h3 style={{ borderColor: props.corPrimaria }}>{props.nome}</h3>
             <div className="cards">
                 {props.colaboradores.map(colaborador => <Colaborador
