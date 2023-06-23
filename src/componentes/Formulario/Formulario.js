@@ -19,6 +19,10 @@ const Formulario = (props) => {
             imagem: imagem,
             departamento: departamento
         })
+        setNome('')
+        setCargo('')
+        setImagem('')
+        setDepartamento('')
     }
 
     return (
