@@ -21,14 +21,6 @@ const Formulario = (props) => {
         })
     }
 
-    const departamentos = [
-        "Recrutamento e Seleção",
-        "Treinamento e Desenvolvimento",
-        "Gestão de Talentos",
-        "Administração de Pessoal",
-        "Comunicação Interna"
-    ]
-
     return (
         <section className="formulario">
             <form onSubmit={enviar}>
@@ -56,7 +48,7 @@ const Formulario = (props) => {
                 <ListaSuspensa
                     obrigatorio={true}
                     label="Departamento"
-                    itens={departamentos}
+                    itens={props.departamentos}
                     valor={departamento}
                     inputAlterado={valor => setDepartamento(valor)}
                 />

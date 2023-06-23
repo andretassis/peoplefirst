@@ -47,7 +47,7 @@ function App() {
   return (
     <div className="App">
       <Banner />
-      <Formulario novoColaborador={colaborador => novoCadastro(colaborador)} />
+      <Formulario departamentos={departamentos.map(departamento => departamento.nome)} novoColaborador={colaborador => novoCadastro(colaborador)} />
 
       {departamentos.map(departamento => <Departamentos key={departamento.nome}
         nome={departamento.nome}
