@@ -1,0 +1,17 @@
+.rodape {
+    background-color: #000000;
+    display: flex;
+    justify-content: space-around;
+}
+
+.rodape .escrita {
+    color: #FFFF;
+    font-size: 14px;
+
+}
+
+.rodape .logos {
+    display: flex;
+    padding: 16px 0;
+    gap: 32px;
+}
