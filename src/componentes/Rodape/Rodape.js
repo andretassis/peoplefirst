@@ -5,17 +5,23 @@ const Rodape = () => {
         <footer className="rodape">
             <div className="logos">
                 <div>
-                    <img src="/imagens/fb.png" alt="facebook" />
+                    <a href="#">
+                        <img src="/imagens/fb.png" alt="facebook" />
+                    </a>
                 </div>
                 <div>
-                    <img src="/imagens/ig.png" alt="instagram" />
+                    <a href="https://www.instagram.com/andretassis">
+                        <img src="/imagens/ig.png" alt="instagram" />
+                    </a>
                 </div>
                 <div>
-                    <img src="/imagens/tw.png" alt="twitter" />
+                    <a href="#">
+                        <img src="/imagens/tw.png" alt="twitter" />
+                    </a>
                 </div>
             </div>
             <div className="escrita">
-                <h3>Desenvolvido por Andre Tassis</h3>
+                <h3>Desenvolvido por <a href="https://www.linkedin.com/in/andretassis">Andre Tassis</a></h3>
             </div>
         </footer>
     )
