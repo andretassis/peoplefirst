@@ -6,7 +6,7 @@ import Rodape from './componentes/Rodape/Rodape';
 
 function App() {
 
-  const departamentos = [
+  const [departamentos, setDepartamentos] = useState([
     {
       nome: "Recrutamento e Seleção",
       corPrimaria: "#57C278",
@@ -36,7 +36,7 @@ function App() {
       corPrimaria: "#D86EBF",
       corSecundaria: "#FAE5F5",
     }
-  ]
+  ])
 
   const [colaboradores, setColaboradores] = useState([])
 
@@ -46,6 +46,15 @@ function App() {
 
   const deletarColaborador = () => {
     console.log('deletei')
+  }
+
+  function mudarCorDoColaborador(cor, nome) {
+    setDepartamentos(departamentos.map(departamento => {
+      if (departamento.nome === nome) {
+        departamento.corPrimaria = cor;
+      }
+      return departamento
+    }))
   }
 
   return (
@@ -60,6 +69,7 @@ function App() {
         corSecundaria={departamento.corSecundaria}
         colaboradores={colaboradores.filter(colaborador => colaborador.departamento === departamento.nome)}
         deletar={deletarColaborador}
+        mudarCor={mudarCorDoColaborador}
       />)}
 
       <Rodape />
