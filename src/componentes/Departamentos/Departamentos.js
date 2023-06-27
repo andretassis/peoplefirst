@@ -1,9 +1,11 @@
 import Colaborador from '../Colaborador/Colaborador'
+import hexToRgba from 'hex-to-rgba'
+
 import './Departamentos.css'
 
 const Departamentos = (props) => {
     return (
-        (props.colaboradores.length > 0) && <section className="departamentos" style={{ backgroundColor: props.corSecundaria }}>
+        (props.colaboradores.length > 0) && <section className="departamentos" style={{ backgroundColor: hexToRgba(props.corPrimaria, '0.2') }} >
             <input type="color" className="input-cor" value={props.corPrimaria} onChange={elemento => props.mudarCor(elemento.target.value, props.nome)} />
             <h3 style={{ borderColor: props.corPrimaria }}>{props.nome}</h3>
             <div className="cards">
@@ -18,7 +20,7 @@ const Departamentos = (props) => {
                     />
                 })}
             </div>
-        </section>
+        </section >
     )
 }
 
