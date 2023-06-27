@@ -4,7 +4,11 @@ import './Colaborador.css'
 const Colaborador = (props) => {
     return (
         <div className="colaborador">
-            <IoMdCloseCircle size={25} className="deletar" onClick={props.deletar} />
+            <IoMdCloseCircle
+                size={25}
+                className="deletar"
+                onClick={() => props.deletar(props.id)}
+            />
             <div className="cabecalho" style={{ backgroundColor: props.corDeFundo }}>
                 <img src={props.imagem} alt={props.nome} />
             </div>
