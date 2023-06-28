@@ -43,6 +43,7 @@ function App() {
   const [colaboradores, setColaboradores] = useState([
     {
       id: uuidv4(),
+      favorito: false,
       nome: "Joao Tassis",
       cargo: "AAAAAA",
       imagem: "https://www.github.com/andretassis.png",
@@ -50,6 +51,7 @@ function App() {
     },
     {
       id: uuidv4(),
+      favorito: false,
       nome: "Andre Tassis",
       cargo: "AAAAAA",
       imagem: "https://www.github.com/andretassis.png",
@@ -57,6 +59,7 @@ function App() {
     },
     {
       id: uuidv4(),
+      favorito: false,
       nome: "Fabio Tassis",
       cargo: "AAAAAA",
       imagem: "https://www.github.com/andretassis.png",
@@ -85,6 +88,10 @@ function App() {
     setDepartamentos([...departamentos, { ...novoTime, id: uuidv4() }])
   }
 
+  function favoritarColaborador(id) {
+    console.log("Favoritei")
+  }
+
   return (
     <div className="App">
       <Banner />
@@ -103,6 +110,7 @@ function App() {
           colaboradores={colaboradores.filter(colaborador => colaborador.departamento === departamento.nome)}
           deletar={deletarColaborador}
           mudarCor={mudarCorDoColaborador}
+          favoritarColaborador={favoritarColaborador}
         />)}
       </section>
 
