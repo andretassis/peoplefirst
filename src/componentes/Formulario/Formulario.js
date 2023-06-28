@@ -82,8 +82,8 @@ const Formulario = (props) => {
                 />
                 <CampoTexto
                     obrigatorio={true}
+                    type="color"
                     label="Cor"
-                    placeholder="Ex.: #000000"
                     valor={cor}
                     inputAlterado={valor => setCor(valor)}
                 />
