@@ -1,7 +1,9 @@
 import { useState } from "react"
+import { v4 as uuidv4 } from 'uuid'
 import Botao from "../Botao/Botao"
 import CampoTexto from "../CampoTexto/CampoTexto"
 import ListaSuspensa from "../ListaSuspensa/ListaSuspensa"
+
 import "./Formulario.css"
 
 const Formulario = (props) => {
@@ -14,6 +16,7 @@ const Formulario = (props) => {
     const enviar = (evento) => {
         evento.preventDefault()
         props.novoColaborador({
+            id: uuidv4(),
             nome: nome,
             cargo: cargo,
             imagem: imagem,

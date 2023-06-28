@@ -18,3 +18,9 @@ Assim, fica mais claro a visualização de cada cargo e quem são as pessoas res
 ## Stack utilizada
 
 **Front-end:** ReactJS, CSS
+
+## Bibliotecas utilizadas
+
+- uuid;
+- Hex to RGBA
+- React Icons
