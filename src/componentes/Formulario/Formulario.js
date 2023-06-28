@@ -12,6 +12,8 @@ const Formulario = (props) => {
     const [cargo, setCargo] = useState('')
     const [imagem, setImagem] = useState('')
     const [departamento, setDepartamento] = useState('')
+    const [novoDepartamento, setNovoDepartamento] = useState('')
+    const [cor, setCor] = useState('')
 
     const enviar = (evento) => {
         evento.preventDefault()
@@ -31,7 +33,7 @@ const Formulario = (props) => {
     return (
         <section className="formulario">
             <form onSubmit={enviar}>
-                <h2>Preencha os dados para criação do card</h2>
+                <h2>Preencha os dados para criar o card</h2>
                 <CampoTexto
                     obrigatorio={true}
                     label="Nome"
@@ -63,7 +65,33 @@ const Formulario = (props) => {
                     Criar Card
                 </Botao>
             </form>
-        </section>
+            <form onSubmit={(e) => {
+                e.preventDefault()
+                props.criarDepartamento({ nome: novoDepartamento, corPrimaria: cor })
+                setNovoDepartamento('')
+                setCor('')
+            }}
+            >
+                <h2>Preencha os dados para criar um novo departamento</h2>
+                <CampoTexto
+                    obrigatorio={true}
+                    label="Nome"
+                    placeholder="Digite o nome do departamento"
+                    valor={novoDepartamento}
+                    inputAlterado={valor => setNovoDepartamento(valor)}
+                />
+                <CampoTexto
+                    obrigatorio={true}
+                    label="Cor"
+                    placeholder="Ex.: #000000"
+                    valor={cor}
+                    inputAlterado={valor => setCor(valor)}
+                />
+                <Botao>
+                    Criar Departamento
+                </Botao>
+            </form>
+        </section >
     )
 }
 

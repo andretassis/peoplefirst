@@ -37,7 +37,7 @@ function App() {
       id: uuidv4(),
       nome: "Comunicação Interna",
       corPrimaria: "#D86EBF",
-    }
+    },
   ])
 
   const [colaboradores, setColaboradores] = useState([
@@ -81,10 +81,18 @@ function App() {
     }))
   }
 
+  function novoDepartamento(novoTime) {
+    setDepartamentos([...departamentos, { ...novoTime, id: uuidv4() }])
+  }
+
   return (
     <div className="App">
       <Banner />
-      <Formulario departamentos={departamentos.map(departamento => departamento.nome)} novoColaborador={colaborador => novoCadastro(colaborador)} />
+      <Formulario
+        departamentos={departamentos.map(departamento => departamento.nome)}
+        novoColaborador={colaborador => novoCadastro(colaborador)}
+        criarDepartamento={novoDepartamento}
+      />
       <section className="organizacao">
         <h3>Organização</h3>
         {departamentos.map(departamento => <Departamentos
