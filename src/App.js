@@ -40,32 +40,7 @@ function App() {
     },
   ])
 
-  const [colaboradores, setColaboradores] = useState([
-    {
-      id: uuidv4(),
-      favorito: false,
-      nome: "Joao Tassis",
-      cargo: "AAAAAA",
-      imagem: "https://www.github.com/andretassis.png",
-      departamento: "Gestão de Talentos"
-    },
-    {
-      id: uuidv4(),
-      favorito: false,
-      nome: "Andre Tassis",
-      cargo: "AAAAAA",
-      imagem: "https://www.github.com/andretassis.png",
-      departamento: "Gestão de Talentos"
-    },
-    {
-      id: uuidv4(),
-      favorito: false,
-      nome: "Fabio Tassis",
-      cargo: "AAAAAA",
-      imagem: "https://www.github.com/andretassis.png",
-      departamento: "Recrutamento e Seleção"
-    }
-  ])
+  const [colaboradores, setColaboradores] = useState([])
 
   const novoCadastro = (colaborador) => {
     setColaboradores([...colaboradores, colaborador])
