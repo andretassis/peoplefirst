@@ -11,9 +11,10 @@ Assim, fica mais claro a visualização de cada cargo e quem são as pessoas res
 
 ## Melhorias
 
-- Remover colaborador
+- Favoritar colaborador
 - Editar colaborador
-- Escolher as cores de fundo e destaque que o usuário preferir
+- Pesquisar colaborador
+- Arrastar card entre departamentos
 
 ## Stack utilizada
 

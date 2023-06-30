@@ -13,7 +13,7 @@ const Formulario = (props) => {
     const [imagem, setImagem] = useState('')
     const [departamento, setDepartamento] = useState('')
     const [novoDepartamento, setNovoDepartamento] = useState('')
-    const [cor, setCor] = useState('')
+    const [cor, setCor] = useState('#ffffff')
 
     const enviar = (evento) => {
         evento.preventDefault()
@@ -69,7 +69,7 @@ const Formulario = (props) => {
                 e.preventDefault()
                 props.criarDepartamento({ nome: novoDepartamento, corPrimaria: cor })
                 setNovoDepartamento('')
-                setCor('')
+                setCor('#ffffff')
             }}
             >
                 <h2>Preencha os dados para criar um novo departamento</h2>

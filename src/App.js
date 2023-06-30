@@ -88,10 +88,6 @@ function App() {
     setDepartamentos([...departamentos, { ...novoTime, id: uuidv4() }])
   }
 
-  function favoritarColaborador(id) {
-    console.log("Favoritei")
-  }
-
   return (
     <div className="App">
       <Banner />
@@ -110,7 +106,6 @@ function App() {
           colaboradores={colaboradores.filter(colaborador => colaborador.departamento === departamento.nome)}
           deletar={deletarColaborador}
           mudarCor={mudarCorDoColaborador}
-          favoritarColaborador={favoritarColaborador}
         />)}
       </section>
 

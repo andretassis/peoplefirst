@@ -24,7 +24,6 @@ const Departamentos = (props) => {
                             imagem={colaborador.imagem}
                             corDeFundo={props.corPrimaria}
                             deletar={props.deletar}
-                            marcarFavorito={props.marcarFavorito}
                         />
                     )
                 })}

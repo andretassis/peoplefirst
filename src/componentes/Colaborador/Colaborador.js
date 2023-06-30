@@ -1,4 +1,5 @@
 import { IoMdCloseCircle } from 'react-icons/io'
+import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai'
 import './Colaborador.css'
 
 const Colaborador = (props) => {
